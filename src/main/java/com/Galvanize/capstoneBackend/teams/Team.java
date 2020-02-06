@@ -19,7 +19,7 @@ public class Team {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "teams")
+    @OneToMany(mappedBy = "team")
     private Set<User> users;
 
     private Team(){}
