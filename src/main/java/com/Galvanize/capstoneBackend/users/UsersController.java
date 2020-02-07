@@ -30,7 +30,7 @@ public class UsersController {
     public User addUser(@RequestBody User newUser){ return this.usersService.addUser(newUser); }
 
     @PatchMapping
-    public User updateUser(User updatedUser) {
+    public User updateUser(@RequestBody User updatedUser) {
         User user = this.usersService.getOneUser(updatedUser.getId()).orElseThrow(IllegalArgumentException::new);
         return this.usersService.updateUser(updatedUser);
     }
