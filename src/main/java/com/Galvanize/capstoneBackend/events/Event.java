@@ -25,10 +25,13 @@ public class Event {
     private String date;
     //need some help with storing date so it can be used in charts
     //actually might not need work here, will need need to format dates elsewhere before they are inserted into the database
+    //thinking is will be received as "yyyy-MM-dd"
 
-    @ManyToOne
-    @JoinColumn
-    private User user;
+    @Column
+    private int user_id;
+//    @ManyToOne
+//    @JoinColumn
+//    private User user;
 
     public Event(){}
 

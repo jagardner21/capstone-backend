@@ -27,7 +27,7 @@ public class UsersController {
     }
 
     @PostMapping
-    public User addUser(User newUser){ return this.usersService.addUser(newUser); }
+    public User addUser(@RequestBody User newUser){ return this.usersService.addUser(newUser); }
 
     @PatchMapping
     public User updateUser(User updatedUser) {

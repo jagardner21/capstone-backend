@@ -3,6 +3,7 @@ package com.Galvanize.capstoneBackend.users;
 import com.Galvanize.capstoneBackend.events.Event;
 import com.Galvanize.capstoneBackend.teams.Team;
 import lombok.Data;
+import lombok.extern.apachecommons.CommonsLog;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,6 +14,8 @@ import java.util.List;
 
 public class User {
 
+    public User(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,12 +23,14 @@ public class User {
     @Column
     private String name;
 
-    @ManyToOne
-    @JoinColumn
-    private Team team;
+    @Column
+    private int team_id;
+//    @ManyToOne
+//    @JoinColumn
+//    private Team team;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user_id")
     private List<Event> events;
 
-    public User(){}
+
 }

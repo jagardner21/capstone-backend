@@ -22,7 +22,7 @@ public class TeamsController {
     public Optional<Team> getOneTeam(@PathVariable int id) { return this.teamsService.getOneTeam(id); }
 
     @PostMapping
-    public Team addTeam(Team newTeam) { return this.teamsService.addTeam(newTeam); }
+    public Team addTeam(@RequestBody Team newTeam) { return this.teamsService.addTeam(newTeam); }
 
     @PatchMapping
     public Team updateTeam(@RequestBody Team updatedTeam){

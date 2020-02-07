@@ -4,6 +4,7 @@ import com.Galvanize.capstoneBackend.users.User;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,6 +13,8 @@ import java.util.Set;
 
 public class Team {
 
+    private Team(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,8 +22,8 @@ public class Team {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    private Set<User> users;
+    @OneToMany(mappedBy = "team_id")
+    private List<User> users;
 
-    private Team(){}
+
 }
