@@ -29,9 +29,6 @@ public class Event {
 
     @Column
     private int user_id;
-//    @ManyToOne
-//    @JoinColumn
-//    private User user;
 
     public Event(){}
 
