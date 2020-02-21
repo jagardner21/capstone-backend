@@ -22,7 +22,6 @@ public class UsersController {
     public List<User> getAllUsers(){ return this.usersService.getAllUsers(); }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public Optional<User> getOneUser(@PathVariable int id){
         return this.usersService.getOneUser(id);
     }

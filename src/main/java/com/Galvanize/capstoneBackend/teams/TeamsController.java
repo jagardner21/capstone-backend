@@ -19,7 +19,6 @@ public class TeamsController {
     public List<Team> getAllTeams() { return this.teamsService.getAllTeams(); }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public Optional<Team> getOneTeam(@PathVariable int id) { return this.teamsService.getOneTeam(id); }
 
     @PostMapping

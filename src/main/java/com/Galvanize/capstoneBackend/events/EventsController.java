@@ -20,22 +20,21 @@ public class EventsController {
     public List<Event> getAllEvents() { return this.eventsService.getAllEvents(); }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public Optional<Event> getOneEvent(@PathVariable int id) { return this.eventsService.getOneEvent(id); }
 
-   @PostMapping
-   public Event addEvent(@RequestBody Event newEvent){ return this.eventsService.addEvent(newEvent); }
+    @PostMapping
+    public Event addEvent(@RequestBody Event newEvent){ return this.eventsService.addEvent(newEvent); }
 
-   @PatchMapping
+    @PatchMapping
     public Event updateEvent(@RequestBody Event updatedEvent){
         Event event = eventsService.getOneEvent(updatedEvent.getId()).orElseThrow(IllegalArgumentException::new);
         return this.eventsService.updateEvent(updatedEvent);
-   }
+    }
 
-   @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public String deleteEvent(@PathVariable int id){
         Event event = eventsService.getOneEvent(id).orElseThrow(IllegalArgumentException::new);
         return eventsService.deleteEvent(id);
-   }
+    }
 
 }
