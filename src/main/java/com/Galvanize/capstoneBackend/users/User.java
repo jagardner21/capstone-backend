@@ -29,7 +29,7 @@ public class User {
 //    @JoinColumn
 //    private Team team;
 
-    @OneToMany(mappedBy = "user_id")
+    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
     private List<Event> events;
 
 
